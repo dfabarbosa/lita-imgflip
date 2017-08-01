@@ -88,7 +88,7 @@ module Lita
       end
 
       def meme_ang20_meme(response)
-        generate_meme(response, 109841308, " ", text1:response.matches[0][1])
+        generate_meme(response, 109841308, text0:" ", text1:response.matches[0][1])
       end
 
       def meme_grumpy_cat(response)
