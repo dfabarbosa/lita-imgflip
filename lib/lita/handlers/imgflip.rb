@@ -21,7 +21,7 @@ module Lita
       # route %r{(.*) (You'?re gonna have a bad time)}i,             :meme_bad_time,           help: { ".. You're gonna have a bad time" => "generates You're gonna have a bad time meme" }
       route %r{(one does not simply) (.*)}i,                       :meme_simply,             help: { "one does not simply.." => "generates one does not simply.. meme" }
       route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat,         help: { "grumpy cat .. , .." => "generates grumpy cat .. , .. meme" }
-      route %r{(pedro_dar) (.*),(.*)}i,                            :meme_pedro_dar,          help: { "pedro_dar .. , .." => "generates pedro dar .. , .. meme" }
+      route %r{(pedro_meme) (.*),(.*)}i,                           :meme_pedro_meme,          help: { "pedro_meme .. , .." => "generates pedro dar .. , .. meme" }
       # route %r{(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like,         help: { "it looks like you're .." => "generates it looks like you're .. meme", "it looks like you.." => "(case insensitive) generates it looks like you.. meme" }
       route %r{(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only,          help: { "AM I THE ONLY ONE AROUND HERE.." => "generates AM I THE ONLY ONE AROUND HERE.. meme" }
       route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed,      help: { "..NOT IMPRESSED" => "generates ..NOT IMPRESSED meme" }
@@ -90,7 +90,7 @@ module Lita
         generate_meme(response, 405658, text0:response.matches[0][1], text1:response.matches[0][2])
       end
 
-      def meme_pedro_dar(response)
+      def meme_pedro_meme(response)
         generate_meme(response, 109522183, text0:response.matches[0][1], text1:response.matches[0][2])
       end
 
@@ -160,12 +160,12 @@ module Lita
 
       private
 
-      def khanify(phrase)
-        shouty_phrase = phrase.upcase
-        last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
-        last_vowel = shouty_phrase[last_vowel_index]
-        "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
-      end
+      # def khanify(phrase)
+      #   shouty_phrase = phrase.upcase
+      #   last_vowel_index = shouty_phrase.rindex(/[AEIOU]/) || -1 # default to final consonant
+      #   last_vowel = shouty_phrase[last_vowel_index]
+      #   "#{shouty_phrase[0..last_vowel_index]}#{10.times.map{ last_vowel }.join}#{shouty_phrase[last_vowel_index..-1]}!!!!"
+      # end
 
       def generate_meme(response, template_id, text0: nil, text1: nil)
 
