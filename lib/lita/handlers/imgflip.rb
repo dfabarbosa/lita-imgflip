@@ -21,7 +21,8 @@ module Lita
       # route %r{(.*) (You'?re gonna have a bad time)}i,             :meme_bad_time,           help: { ".. You're gonna have a bad time" => "generates You're gonna have a bad time meme" }
       route %r{(one does not simply) (.*)}i,                       :meme_simply,             help: { "one does not simply.." => "generates one does not simply.. meme" }
       route %r{(grumpy cat) (.*),(.*)}i,                           :meme_grumpy_cat,         help: { "grumpy cat .. , .." => "generates grumpy cat .. , .. meme" }
-      route %r{(pedro_meme) (.*),(.*)}i,                           :meme_pedro_meme,          help: { "pedro_meme .. , .." => "generates pedro dar .. , .. meme" }
+      route %r{(pedro_meme) (.*),(.*)}i,                           :meme_pedro_meme,         help: { "pedro_meme .. , .." => "generates pedro .. , .. meme" }
+      route %r{(ang20_meme) (.*)}i,                                :meme_ang20_meme,         help: { "ang20_meme.." => "generates angela coelho .. meme" }
       # route %r{(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like,         help: { "it looks like you're .." => "generates it looks like you're .. meme", "it looks like you.." => "(case insensitive) generates it looks like you.. meme" }
       route %r{(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only,          help: { "AM I THE ONLY ONE AROUND HERE.." => "generates AM I THE ONLY ONE AROUND HERE.. meme" }
       route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed,      help: { "..NOT IMPRESSED" => "generates ..NOT IMPRESSED meme" }
@@ -84,6 +85,10 @@ module Lita
 
       def meme_simply(response)
         generate_meme(response, 61579)
+      end
+
+      def meme_ang20_meme(response)
+        generate_meme(response, 109841308)
       end
 
       def meme_grumpy_cat(response)
