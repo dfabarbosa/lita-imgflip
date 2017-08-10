@@ -24,7 +24,7 @@ module Lita
       route %r{(pedro_meme) (.*)/(.*)}i,                           :meme_pedro_meme,         help: { "pedro_meme .. / .." => "generates pedro .. / .. meme" }
       route %r{(sara_meme) (.*)/(.*)}i,                            :meme_sara_meme,          help: { "sara_meme .. / .." => "generates sara .. / .. meme" }
       route %r{(daniel_meme) (.*)/(.*)}i,                          :meme_daniel_meme,        help: { "daniel_meme .. / .." => "generates daniel .. / .. meme" }
-      route %r{(ang_20_meme) (.*)/(.*)}i,                          :meme_ang_20_meme,        help: { "ang_20_meme .. / .." => "generates angela coelho .. / .. meme" }
+      route %r{(ang20_meme) (.*)/(.*)}i,                          :meme_ang20_meme,        help: { "ang20_meme .. / .." => "generates angela coelho .. / .. meme" }
       # route %r{(it looks like you're|it looks like you) (.*)}i,    :meme_looks_like,         help: { "it looks like you're .." => "generates it looks like you're .. meme", "it looks like you.." => "(case insensitive) generates it looks like you.. meme" }
       route %r{(AM I THE ONLY ONE AROUND HERE) (.*)}i,             :meme_am_i_only,          help: { "AM I THE ONLY ONE AROUND HERE.." => "generates AM I THE ONLY ONE AROUND HERE.. meme" }
       route %r{(.*)(NOT IMPRESSED*)}i,                             :meme_not_impressed,      help: { "..NOT IMPRESSED" => "generates ..NOT IMPRESSED meme" }
@@ -105,7 +105,7 @@ module Lita
         generate_meme(response, 110628886, text0:response.matches[0][1], text1:response.matches[0][2])
       end
 
-      def meme_ang_20_meme(response)
+      def meme_ang20_meme(response)
         generate_meme(response, 110628848, text0:response.matches[0][1], text1:response.matches[0][2])
       end
 
