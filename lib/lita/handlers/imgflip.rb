@@ -210,6 +210,10 @@ module Lita
           text1: text1
           )
 
+        puts "****************************************"
+        puts http_resp.body
+        puts "****************************************"
+
         if http_resp.status == 200
           result = MultiJson.load(http_resp.body)
 
