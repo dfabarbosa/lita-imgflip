@@ -214,7 +214,7 @@ module Lita
         if http_resp.status == 200
           result = MultiJson.load(http_resp.body)
 
-          puts "****************************************"
+          puts "****************************************1"
           puts results
           puts "****************************************"
 
@@ -226,6 +226,9 @@ module Lita
           end
 
         else
+          puts "****************************************2"
+          puts http_resp.inspect
+          puts "****************************************"
           Lita.logger.error "#{self.class}: Unable to generate a meme image: #{http_resp.body}"
           response.reply "Error: Unable to generate a meme image"
         end
