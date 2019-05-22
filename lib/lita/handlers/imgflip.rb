@@ -211,7 +211,7 @@ module Lita
           )
 
         puts "****************************************"
-        puts http_resp
+        puts http_resp.inspect
         puts "****************************************"
 
         if http_resp.status == 200
