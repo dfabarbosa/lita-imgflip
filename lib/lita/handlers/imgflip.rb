@@ -201,7 +201,7 @@ module Lita
         text0 ||= response.matches[0][0]
         text1 ||= response.matches[0][1]
 
-        http_resp = http.get(
+        http_resp = http.post(
           'http://api.imgflip.com/caption_image',
           username: Lita.config.handlers.imgflip.username,
           password: Lita.config.handlers.imgflip.password,
