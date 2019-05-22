@@ -211,7 +211,7 @@ module Lita
           )
 
         puts "****************************************"
-        puts http_resp.body
+        puts http_resp
         puts "****************************************"
 
         if http_resp.status == 200
